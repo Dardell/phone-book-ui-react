@@ -37,6 +37,7 @@ const EntryList = () => {
         await timeout(2500);
         responses.data.forEach(response => {
             response.asyncString = Number(response.asyncString) + 1;
+            response.date = "keepTheDate";
             EntryService.updateEntry(response, response.id);
         })
         await timeout(2500);
